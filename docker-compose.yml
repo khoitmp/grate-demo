@@ -1,0 +1,17 @@
+services:  
+  postgresdb:
+    image: postgres:latest
+    container_name: postgresdb
+    restart: on-failure
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: "Pass123!"
+    networks:
+      - roundhouse
+
+networks:
+  roundhouse:
+    name: roundhouse
+    driver: bridge
+    external: false
