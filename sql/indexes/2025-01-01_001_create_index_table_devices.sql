@@ -1,1 +1,0 @@
-create index idx_devices_type_id on devices(type_id);

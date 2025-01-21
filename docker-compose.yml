@@ -1,4 +1,56 @@
 services:  
+  tenant-migration:
+    image: erikbra/grate:latest
+    container_name: grate
+    volumes:
+      - ./Migrations:/db
+    environment:
+      - DATABASE_TYPE=PostgreSQL
+      - CREATE_DATABASE=true
+      - TRANSACTION=true
+      - APP_CONNSTRING=User ID=postgres;Password=Pass123!;Host=core;Port=5432;Database=core;Pooling=true
+    networks:
+      - grate_network
+
+  # subtenant-migration-majority:
+  #   image: erikbra/grate:latest
+  #   container_name: grate
+  #   volumes:
+  #     - ./Migrations/All:/db
+  #   environment:
+  #     - DATABASE_TYPE=PostgreSQL
+  #     - CREATE_DATABASE=true
+  #     - TRANSACTION=true
+  #     - APP_CONNSTRING=User ID=postgres;Password=Pass123!;Host=core;Port=5432;Database=core;Pooling=true
+  #   networks:
+  #     - grate_network
+
+  # subtenant-migration-id:
+  #   image: erikbra/grate:latest
+  #   container_name: grate
+  #   volumes:
+  #     - ./Migrations/ID:/db
+  #   environment:
+  #     - DATABASE_TYPE=PostgreSQL
+  #     - CREATE_DATABASE=true
+  #     - TRANSACTION=true
+  #     - APP_CONNSTRING=User ID=postgres;Password=Pass123!;Host=core;Port=5432;Database=core;Pooling=true
+  #   networks:
+  #     - grate_network  
+
+  # subtenant-migration-th:
+  #   image: erikbra/grate:latest
+  #   container_name: grate
+  #   volumes:
+  #     - ./Migrations/TH:/db
+  #   environment:
+  #     - DATABASE_TYPE=PostgreSQL
+  #     - CREATE_DATABASE=true
+  #     - TRANSACTION=true
+  #     - APP_CONNSTRING=User ID=postgres;Password=Pass123!;Host=core;Port=5432;Database=core;Pooling=true
+  #   networks:
+  #     - grate_network
+
   postgresdb:
     image: postgres:latest
     container_name: postgresdb
