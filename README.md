@@ -92,3 +92,6 @@ grate \
   --sqlfilesdirectory=Migrations/Tenants/<subtenant_directory> \
   --databasetype=<database_type>
 ```
+
+## VI. Demo
+- [Download the demo](./demo/migration-tool-demo.mkv)
