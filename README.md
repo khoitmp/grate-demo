@@ -146,6 +146,8 @@ grate \
 ```
 
 ### 2. Demo
+- [Download the video](./demo/migration-tool-demo.mp4)
+
 <video controls>
   <source src="./demo/migration-tool-demo.mp4" type="video/mp4">
 </video>
